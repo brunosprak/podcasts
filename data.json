@@ -20,7 +20,7 @@
         {
           "id": "Z9r53a1h7Ns",
           "title": "The CIA Propaganda Trick That Still Shapes What You Believe | Hugh Wilford",
-          "description": "An analysis of how CIA psychological operations shaped the cultural landscape of the Cold War, including the methods used to influence public sentiment through organised propaganda.",
+          "description": "Examine how CIA psychological operations shaped the cultural landscape of the Cold War. We analyse the methods used to influence public sentiment through organised propaganda.",
           "published": "2026-11-03T00:00:00Z",
           "duration_seconds": 1159,
           "audio": "podcasts/academic-agent/media/Z9r53a1h7Ns.mp3",
@@ -30,7 +30,7 @@
         {
           "id": "NIOgg8N3wXU",
           "title": "What the CIA Didn't Want You to Know | Frances Stonor Saunders",
-          "description": "Frances Stonor Saunders discusses the CIA, cultural influence and the hidden history behind Cold War intellectual life.",
+          "description": "Examine the Cultural Cold War to understand how the CIA manipulated global intellectual and artistic discourse.",
           "published": "2026-11-02T00:00:00Z",
           "duration_seconds": 2933,
           "audio": "podcasts/academic-agent/media/NIOgg8N3wXU.mp3",
@@ -40,12 +40,32 @@
         {
           "id": "6lKrjvq8srg",
           "title": "The Myth of Raw Talent: Why Repetition is Everything | Alex Ferguson",
-          "description": "A discussion of raw ability, repetition and the habits required to turn potential into long-term success.",
+          "description": "Examine the essential leadership qualities that define successful individuals and how character impacts long-term influence.",
           "published": "2026-10-29T00:00:00Z",
           "duration_seconds": 2036,
           "audio": "podcasts/academic-agent/media/6lKrjvq8srg.mp3",
           "image": "podcasts/academic-agent/media/6lKrjvq8srg.jpg",
           "source_url": "https://www.youtube.com/watch?v=6lKrjvq8srg"
+        },
+        {
+          "id": "R20o2fbx5pQ",
+          "title": "Why Your Identity Is A Construction | David Bowie",
+          "description": "Explore how David Bowie used the artistic persona to redefine rock music and anticipate major cultural shifts.",
+          "published": "2026-10-28T00:00:00Z",
+          "duration_seconds": 2595,
+          "audio": "podcasts/academic-agent/media/R20o2fbx5pQ.mp3",
+          "image": "podcasts/academic-agent/media/R20o2fbx5pQ.jpg",
+          "source_url": "https://www.youtube.com/watch?v=R20o2fbx5pQ"
+        },
+        {
+          "id": "tI1m5vQrxrE",
+          "title": "How WWE Explains Modern Media and Politics | Vince McMahon",
+          "description": "Examine the Superlative Principle to understand how professional wrestling prioritises narrative over athletic competition.",
+          "published": "2026-10-27T00:00:00Z",
+          "duration_seconds": 2309,
+          "audio": "podcasts/academic-agent/media/tI1m5vQrxrE.mp3",
+          "image": "podcasts/academic-agent/media/tI1m5vQrxrE.jpg",
+          "source_url": "https://www.youtube.com/watch?v=tI1m5vQrxrE"
         }
       ]
     }
