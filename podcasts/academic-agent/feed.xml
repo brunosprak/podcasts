@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Academic Agent — áudio</title>
+    <link>https://brunosprak.github.io/podcasts/podcasts/academic-agent/</link>
+    <description>Episódios do canal Academic Agent em formato de áudio, reunidos em um feed não oficial para escuta em aplicativos de podcast.</description>
+    <language>en</language>
+    <generator>custom-podcast/tools/build_site.py</generator>
+    <atom:link href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:author>Academic Agent</itunes:author>
+    <itunes:summary>Episódios do canal Academic Agent em formato de áudio, reunidos em um feed não oficial para escuta em aplicativos de podcast.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.jpg" />
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Philosophy" />
+    </itunes:category>
+    <image>
+      <url>https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.jpg</url>
+      <title>Academic Agent — áudio</title>
+      <link>https://brunosprak.github.io/podcasts/podcasts/academic-agent/</link>
+    </image>
+    <item>
+      <title>The CIA Propaganda Trick That Still Shapes What You Believe | Hugh Wilford</title>
+      <link>https://www.youtube.com/watch?v=Z9r53a1h7Ns</link>
+      <description>An analysis of how CIA psychological operations shaped the cultural landscape of the Cold War, including the methods used to influence public sentiment through organised propaganda.</description>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">Z9r53a1h7Ns</guid>
+      <enclosure url="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.mp3" length="23353461" type="audio/mpeg" />
+      <itunes:author>Academic Agent</itunes:author>
+      <itunes:summary>An analysis of how CIA psychological operations shaped the cultural landscape of the Cold War, including the methods used to influence public sentiment through organised propaganda.</itunes:summary>
+      <itunes:duration>1159</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.jpg" />
+    </item>
+    <item>
+      <title>What the CIA Didn't Want You to Know | Frances Stonor Saunders</title>
+      <link>https://www.youtube.com/watch?v=NIOgg8N3wXU</link>
+      <description>Frances Stonor Saunders discusses the CIA, cultural influence and the hidden history behind Cold War intellectual life.</description>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">NIOgg8N3wXU</guid>
+      <enclosure url="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/NIOgg8N3wXU.mp3" length="59049973" type="audio/mpeg" />
+      <itunes:author>Academic Agent</itunes:author>
+      <itunes:summary>Frances Stonor Saunders discusses the CIA, cultural influence and the hidden history behind Cold War intellectual life.</itunes:summary>
+      <itunes:duration>2933</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/NIOgg8N3wXU.jpg" />
+    </item>
+    <item>
+      <title>The Myth of Raw Talent: Why Repetition is Everything | Alex Ferguson</title>
+      <link>https://www.youtube.com/watch?v=6lKrjvq8srg</link>
+      <description>A discussion of raw ability, repetition and the habits required to turn potential into long-term success.</description>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">6lKrjvq8srg</guid>
+      <enclosure url="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/6lKrjvq8srg.mp3" length="41514447" type="audio/mpeg" />
+      <itunes:author>Academic Agent</itunes:author>
+      <itunes:summary>A discussion of raw ability, repetition and the habits required to turn potential into long-term success.</itunes:summary>
+      <itunes:duration>2036</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/6lKrjvq8srg.jpg" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,53 @@
+{
+  "site": {
+    "title": "Podcasts",
+    "description": "Uma coleção pessoal de feeds para ouvir conteúdo em formato de podcast.",
+    "base_url": "https://brunosprak.github.io/podcasts"
+  },
+  "podcasts": [
+    {
+      "slug": "academic-agent",
+      "title": "Academic Agent — áudio",
+      "author": "Academic Agent",
+      "language": "en",
+      "description": "Episódios do canal Academic Agent em formato de áudio, reunidos em um feed não oficial para escuta em aplicativos de podcast.",
+      "source_url": "https://www.youtube.com/channel/UCyawG3aTE7RmNQcFQskDWcw",
+      "image": "podcasts/academic-agent/media/Z9r53a1h7Ns.jpg",
+      "category": "Society & Culture",
+      "subcategory": "Philosophy",
+      "explicit": false,
+      "episodes": [
+        {
+          "id": "Z9r53a1h7Ns",
+          "title": "The CIA Propaganda Trick That Still Shapes What You Believe | Hugh Wilford",
+          "description": "An analysis of how CIA psychological operations shaped the cultural landscape of the Cold War, including the methods used to influence public sentiment through organised propaganda.",
+          "published": "2026-11-03T00:00:00Z",
+          "duration_seconds": 1159,
+          "audio": "podcasts/academic-agent/media/Z9r53a1h7Ns.mp3",
+          "image": "podcasts/academic-agent/media/Z9r53a1h7Ns.jpg",
+          "source_url": "https://www.youtube.com/watch?v=Z9r53a1h7Ns"
+        },
+        {
+          "id": "NIOgg8N3wXU",
+          "title": "What the CIA Didn't Want You to Know | Frances Stonor Saunders",
+          "description": "Frances Stonor Saunders discusses the CIA, cultural influence and the hidden history behind Cold War intellectual life.",
+          "published": "2026-11-02T00:00:00Z",
+          "duration_seconds": 2933,
+          "audio": "podcasts/academic-agent/media/NIOgg8N3wXU.mp3",
+          "image": "podcasts/academic-agent/media/NIOgg8N3wXU.jpg",
+          "source_url": "https://www.youtube.com/watch?v=NIOgg8N3wXU"
+        },
+        {
+          "id": "6lKrjvq8srg",
+          "title": "The Myth of Raw Talent: Why Repetition is Everything | Alex Ferguson",
+          "description": "A discussion of raw ability, repetition and the habits required to turn potential into long-term success.",
+          "published": "2026-10-29T00:00:00Z",
+          "duration_seconds": 2036,
+          "audio": "podcasts/academic-agent/media/6lKrjvq8srg.mp3",
+          "image": "podcasts/academic-agent/media/6lKrjvq8srg.jpg",
+          "source_url": "https://www.youtube.com/watch?v=6lKrjvq8srg"
+        }
+      ]
+    }
+  ]
+}
