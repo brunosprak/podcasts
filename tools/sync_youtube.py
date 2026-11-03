@@ -23,16 +23,17 @@ NAMESPACES = {
     "media": "http://search.yahoo.com/mrss/",
     "yt": "http://www.youtube.com/xml/schemas/2015",
 }
+YT_DLP_BASE = [sys.executable, "-m", "yt_dlp", "--js-runtimes", "node"]
 
 
 def yt_dlp(*args: str) -> None:
-    subprocess.run([sys.executable, "-m", "yt_dlp", *args], cwd=ROOT, check=True)
+    subprocess.run([*YT_DLP_BASE, *args], cwd=ROOT, check=True)
 
 
 def is_finalized(video_id: str) -> bool:
     result = subprocess.run(
         [
-            sys.executable, "-m", "yt_dlp", "--quiet", "--skip-download",
+            *YT_DLP_BASE, "--quiet", "--skip-download",
             "--print", "%(live_status)s",
             f"https://www.youtube.com/watch?v={video_id}",
         ],
@@ -41,6 +42,9 @@ def is_finalized(video_id: str) -> bool:
         text=True,
         capture_output=True,
     )
+    if result.returncode:
+        print(result.stderr, file=sys.stderr)
+        raise RuntimeError(f"Could not inspect YouTube video {video_id}")
     statuses = result.stdout.strip().splitlines()
     return bool(statuses) and statuses[-1] in {"not_live", "was_live"}
 
