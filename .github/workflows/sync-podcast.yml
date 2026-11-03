@@ -47,6 +47,9 @@ jobs:
           sudo apt-get install --yes ffmpeg
           python -m pip install --upgrade yt-dlp
 
+      - name: Remove checked-in rotating media
+        run: find podcasts/academic-agent/media -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
+
       - name: Synchronize latest five episodes
         run: python tools/sync_youtube.py
 
