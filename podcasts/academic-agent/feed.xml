@@ -11,12 +11,12 @@
     <itunes:summary>Episódios do canal Academic Agent em formato de áudio, reunidos em um feed não oficial para escuta em aplicativos de podcast.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.jpg" />
+    <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/artwork.png" />
     <itunes:category text="Society &amp; Culture">
       <itunes:category text="Philosophy" />
     </itunes:category>
     <image>
-      <url>https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/Z9r53a1h7Ns.jpg</url>
+      <url>https://brunosprak.github.io/podcasts/podcasts/academic-agent/media/artwork.png</url>
       <title>Academic Agent — áudio</title>
       <link>https://brunosprak.github.io/podcasts/podcasts/academic-agent/</link>
     </image>
