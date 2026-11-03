@@ -50,7 +50,14 @@ jobs:
       - name: Remove checked-in rotating media
         run: find podcasts/academic-agent/media -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
 
+      - name: Configure YouTube authentication
+        env:
+          YOUTUBE_COOKIES_B64: ${{ secrets.YOUTUBE_COOKIES_B64 }}
+        run: printf '%s' "$YOUTUBE_COOKIES_B64" | base64 --decode > "$RUNNER_TEMP/youtube-cookies.txt"
+
       - name: Synchronize latest five episodes
+        env:
+          YOUTUBE_COOKIES_FILE: ${{ runner.temp }}/youtube-cookies.txt
         run: python tools/sync_youtube.py
 
       - name: Assemble static site

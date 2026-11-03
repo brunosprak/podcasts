@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -23,17 +24,24 @@ NAMESPACES = {
     "media": "http://search.yahoo.com/mrss/",
     "yt": "http://www.youtube.com/xml/schemas/2015",
 }
-YT_DLP_BASE = [sys.executable, "-m", "yt_dlp", "--js-runtimes", "node"]
+
+
+def yt_dlp_base() -> list[str]:
+    command = [sys.executable, "-m", "yt_dlp", "--js-runtimes", "node"]
+    cookies_file = os.environ.get("YOUTUBE_COOKIES_FILE")
+    if cookies_file and Path(cookies_file).is_file() and Path(cookies_file).stat().st_size:
+        command.extend(["--cookies", cookies_file])
+    return command
 
 
 def yt_dlp(*args: str) -> None:
-    subprocess.run([*YT_DLP_BASE, *args], cwd=ROOT, check=True)
+    subprocess.run([*yt_dlp_base(), *args], cwd=ROOT, check=True)
 
 
 def is_finalized(video_id: str) -> bool:
     result = subprocess.run(
         [
-            *YT_DLP_BASE, "--quiet", "--skip-download",
+            *yt_dlp_base(), "--quiet", "--skip-download",
             "--print", "%(live_status)s",
             f"https://www.youtube.com/watch?v={video_id}",
         ],
