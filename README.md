@@ -19,7 +19,7 @@ Instale o `yt-dlp`, confirme que o `ffmpeg` está disponível e execute:
 python3 tools/sync_youtube.py
 ```
 
-A rotina consulta o canal, baixa o que estiver faltando, conserva somente os cinco
+A rotina consulta o canal, baixa o que estiver faltando, conserva somente os dez
 episódios mais recentes, remove as mídias que saíram da janela e reconstrói o site
 e o RSS. O limite está definido em `EPISODE_LIMIT` no próprio script.
 

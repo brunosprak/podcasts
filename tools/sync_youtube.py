@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize a YouTube channel into a rolling five-episode podcast feed."""
+"""Synchronize a YouTube channel into a rolling ten-episode podcast feed."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ DATA_PATH = ROOT / "data.json"
 MEDIA_DIR = ROOT / "podcasts" / "academic-agent" / "media"
 CHANNEL_ID = "UCyawG3aTE7RmNQcFQskDWcw"
 FEED_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
-EPISODE_LIMIT = 5
+EPISODE_LIMIT = 10
 ROTATED_SUFFIXES = {".mp3", ".jpg", ".webm", ".webp"}
 NAMESPACES = {
     "atom": "http://www.w3.org/2005/Atom",

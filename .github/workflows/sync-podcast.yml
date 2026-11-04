@@ -55,7 +55,7 @@ jobs:
           cp -f "$MEDIA_CACHE"/*.mp3 podcasts/academic-agent/media/ 2>/dev/null || true
           cp -f "$MEDIA_CACHE"/*.jpg podcasts/academic-agent/media/ 2>/dev/null || true
 
-      - name: Synchronize latest five episodes
+      - name: Synchronize latest ten episodes
         run: python tools/sync_youtube.py
 
       - name: Refresh rotating media cache
