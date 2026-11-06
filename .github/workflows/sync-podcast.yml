@@ -1,4 +1,4 @@
-name: Sync and publish podcast
+name: Sync and publish podcasts
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
-      MEDIA_CACHE: /home/bruno/.cache/custom-podcast/academic-agent
+      MEDIA_CACHE_ROOT: /home/bruno/.cache/custom-podcast
 
     steps:
       - name: Check out repository
@@ -48,21 +48,30 @@ jobs:
           ffmpeg -version | head -1
           python -m pip install --upgrade "yt-dlp[default]"
 
-      - name: Restore rotating media cache
+      - name: Restore rotating media caches
         run: |
-          mkdir -p "$MEDIA_CACHE" podcasts/academic-agent/media
-          find podcasts/academic-agent/media -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
-          cp -f "$MEDIA_CACHE"/*.mp3 podcasts/academic-agent/media/ 2>/dev/null || true
-          cp -f "$MEDIA_CACHE"/*.jpg podcasts/academic-agent/media/ 2>/dev/null || true
+          for media_dir in podcasts/*/media; do
+            slug=$(basename "$(dirname "$media_dir")")
+            cache_dir="$MEDIA_CACHE_ROOT/$slug"
+            mkdir -p "$cache_dir" "$media_dir"
+            find "$media_dir" -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
+            cp -f "$cache_dir"/*.mp3 "$media_dir"/ 2>/dev/null || true
+            cp -f "$cache_dir"/*.jpg "$media_dir"/ 2>/dev/null || true
+          done
 
-      - name: Synchronize latest ten episodes
+      - name: Synchronize configured channels
         run: python tools/sync_youtube.py
 
-      - name: Refresh rotating media cache
+      - name: Refresh rotating media caches
         run: |
-          find "$MEDIA_CACHE" -maxdepth 1 -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
-          cp podcasts/academic-agent/media/*.mp3 "$MEDIA_CACHE"/
-          cp podcasts/academic-agent/media/*.jpg "$MEDIA_CACHE"/
+          for media_dir in podcasts/*/media; do
+            slug=$(basename "$(dirname "$media_dir")")
+            cache_dir="$MEDIA_CACHE_ROOT/$slug"
+            mkdir -p "$cache_dir"
+            find "$cache_dir" -maxdepth 1 -type f \( -name '*.mp3' -o -name '*.jpg' \) -delete
+            cp "$media_dir"/*.mp3 "$cache_dir"/
+            cp "$media_dir"/*.jpg "$cache_dir"/
+          done
 
       - name: Assemble static site
         run: |

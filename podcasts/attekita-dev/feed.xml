@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Attekita Dev — áudio</title>
+    <link>https://brunosprak.github.io/podcasts/podcasts/attekita-dev/</link>
+    <description>Vídeos do canal Attekita Dev em formato de áudio, reunidos em um feed não oficial sobre desenvolvimento de software, tecnologia e inteligência artificial.</description>
+    <language>pt-BR</language>
+    <generator>custom-podcast/tools/build_site.py</generator>
+    <atom:link href="https://brunosprak.github.io/podcasts/podcasts/attekita-dev/feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:author>Attekita Dev</itunes:author>
+    <itunes:summary>Vídeos do canal Attekita Dev em formato de áudio, reunidos em um feed não oficial sobre desenvolvimento de software, tecnologia e inteligência artificial.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:image href="https://brunosprak.github.io/podcasts/podcasts/attekita-dev/media/artwork.png" />
+    <itunes:category text="Education">
+      <itunes:category text="How To" />
+    </itunes:category>
+    <image>
+      <url>https://brunosprak.github.io/podcasts/podcasts/attekita-dev/media/artwork.png</url>
+      <title>Attekita Dev — áudio</title>
+      <link>https://brunosprak.github.io/podcasts/podcasts/attekita-dev/</link>
+    </image>
+  </channel>
+</rss>

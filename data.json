@@ -67,7 +67,24 @@
           "image": "podcasts/academic-agent/media/R20o2fbx5pQ.jpg",
           "source_url": "https://www.youtube.com/watch?v=R20o2fbx5pQ"
         }
-      ]
+      ],
+      "youtube_channel_id": "UCyawG3aTE7RmNQcFQskDWcw",
+      "episode_limit": 10
+    },
+    {
+      "slug": "attekita-dev",
+      "title": "Attekita Dev — áudio",
+      "author": "Attekita Dev",
+      "language": "pt-BR",
+      "description": "Vídeos do canal Attekita Dev em formato de áudio, reunidos em um feed não oficial sobre desenvolvimento de software, tecnologia e inteligência artificial.",
+      "source_url": "https://www.youtube.com/channel/UCetRsdZxDQDcgVDJd6erz6g",
+      "youtube_channel_id": "UCetRsdZxDQDcgVDJd6erz6g",
+      "episode_limit": 10,
+      "image": "podcasts/attekita-dev/media/artwork.png",
+      "category": "Education",
+      "subcategory": "How To",
+      "explicit": false,
+      "episodes": []
     }
   ]
 }

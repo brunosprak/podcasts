@@ -52,9 +52,13 @@ def build_home(data: dict) -> None:
     site = data["site"]
     cards = []
     for podcast in data["podcasts"]:
-        latest = podcast["episodes"][0]
+        latest = podcast["episodes"][0] if podcast["episodes"] else None
         count = len(podcast["episodes"])
         label = "episódio" if count == 1 else "episódios"
+        latest_copy = (
+            f"<p class='latest'>Mais recente: <strong>{html.escape(latest['title'])}</strong></p>"
+            if latest else "<p class='latest'>Episódios aguardando sincronização.</p>"
+        )
         cards.append(f"""
         <article class="show-card">
           <a class="cover-link" href="podcasts/{podcast['slug']}/">
@@ -64,7 +68,7 @@ def build_home(data: dict) -> None:
             <p class="eyebrow">{count} {label}</p>
             <h2><a href="podcasts/{podcast['slug']}/">{html.escape(podcast['title'])}</a></h2>
             <p>{html.escape(podcast['description'])}</p>
-            <p class="latest">Mais recente: <strong>{html.escape(latest['title'])}</strong></p>
+            {latest_copy}
             <div class="actions">
               <a class="button primary" href="podcasts/{podcast['slug']}/">Ouvir agora</a>
               <a class="button" href="podcasts/{podcast['slug']}/feed.xml">Assinar RSS</a>
