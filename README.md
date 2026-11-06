@@ -21,8 +21,9 @@ python3 tools/sync_youtube.py
 
 A rotina consulta cada canal, baixa o que estiver faltando e conserva os dez
 episódios mais recentes de cada podcast, remove as mídias que saíram da janela,
-reconstrói o site e atualiza os feeds RSS. O limite pode ser configurado por podcast
-em `data.json`.
+reconstrói o site e atualiza os feeds RSS. Os áudios são padronizados em 96 kbps
+para manter múltiplos feeds dentro dos limites do GitHub Pages. O limite pode ser
+configurado por podcast em `data.json`.
 
 ## Atualizar apenas o site
 

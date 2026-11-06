@@ -15,8 +15,8 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data.json"
 DEFAULT_EPISODE_LIMIT = 10
-TARGET_AUDIO_BITRATE = "128k"
-MAX_STORED_BITRATE = 140_000
+TARGET_AUDIO_BITRATE = "96k"
+MAX_STORED_BITRATE = 105_000
 ROTATED_SUFFIXES = {".mp3", ".jpg", ".webm", ".webp"}
 NAMESPACES = {
     "atom": "http://www.w3.org/2005/Atom",
