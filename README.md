@@ -19,11 +19,12 @@ Instale o `yt-dlp`, confirme que o `ffmpeg` está disponível e execute:
 python3 tools/sync_youtube.py
 ```
 
-A rotina consulta cada canal, baixa o que estiver faltando e conserva os dez
-episódios mais recentes de cada podcast, remove as mídias que saíram da janela,
-reconstrói o site e atualiza os feeds RSS. Os áudios são padronizados em 96 kbps
-para manter múltiplos feeds dentro dos limites do GitHub Pages. O limite pode ser
-configurado por podcast em `data.json`.
+A rotina consulta cada canal, considera somente vídeos finalizados com duração de
+pelo menos dez minutos, baixa o que estiver faltando e conserva até os dez
+episódios elegíveis mais recentes de cada podcast. Ela também remove as mídias que
+saíram da janela, reconstrói o site e atualiza os feeds RSS. Os áudios são
+padronizados em 96 kbps para manter múltiplos feeds dentro dos limites do GitHub
+Pages. O limite pode ser configurado por podcast em `data.json`.
 
 ## Atualizar apenas o site
 

@@ -15,6 +15,7 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data.json"
 DEFAULT_EPISODE_LIMIT = 10
+MIN_VIDEO_DURATION_SECONDS = 10 * 60
 TARGET_AUDIO_BITRATE = "96k"
 MAX_STORED_BITRATE = 105_000
 ROTATED_SUFFIXES = {".mp3", ".jpg", ".webm", ".webp"}
@@ -37,11 +38,11 @@ def yt_dlp(*args: str) -> None:
     subprocess.run([*yt_dlp_base(), *args], cwd=ROOT, check=True)
 
 
-def is_finalized(video_id: str) -> bool:
+def video_is_eligible(video_id: str) -> bool:
     result = subprocess.run(
         [
             *yt_dlp_base(), "--quiet", "--skip-download",
-            "--print", "%(live_status)s",
+            "--print", "%(live_status)s\t%(duration)s",
             f"https://www.youtube.com/watch?v={video_id}",
         ],
         cwd=ROOT,
@@ -52,8 +53,16 @@ def is_finalized(video_id: str) -> bool:
     if result.returncode:
         print(result.stderr, file=sys.stderr)
         raise RuntimeError(f"Could not inspect YouTube video {video_id}")
-    statuses = result.stdout.strip().splitlines()
-    return bool(statuses) and statuses[-1] in {"not_live", "was_live"}
+    metadata = result.stdout.strip().splitlines()
+    if not metadata:
+        return False
+    live_status, separator, duration = metadata[-1].partition("\t")
+    if not separator or live_status not in {"not_live", "was_live"}:
+        return False
+    try:
+        return float(duration) >= MIN_VIDEO_DURATION_SECONDS
+    except ValueError:
+        return False
 
 
 def latest_entries(channel_id: str, episode_limit: int) -> list[dict]:
@@ -67,7 +76,7 @@ def latest_entries(channel_id: str, episode_limit: int) -> list[dict]:
         title = item.findtext("atom:title", namespaces=NAMESPACES)
         published = item.findtext("atom:published", namespaces=NAMESPACES)
         description = item.findtext("media:group/media:description", namespaces=NAMESPACES)
-        if video_id and title and published and is_finalized(video_id):
+        if video_id and title and published and video_is_eligible(video_id):
             entries.append({
                 "id": video_id,
                 "title": title,
@@ -78,8 +87,10 @@ def latest_entries(channel_id: str, episode_limit: int) -> list[dict]:
             if len(entries) == episode_limit:
                 break
     if len(entries) != episode_limit:
-        raise RuntimeError(
-            f"Expected {episode_limit} RSS entries for {channel_id}, received {len(entries)}"
+        print(
+            f"Warning: {channel_id} has only {len(entries)} finalized videos of at least "
+            f"{MIN_VIDEO_DURATION_SECONDS // 60} minutes in its current YouTube RSS window.",
+            file=sys.stderr,
         )
     return entries
 
